@@ -9,7 +9,7 @@ if 0 | endif
 if &compatible
   set nocompatible               " Be iMproved
 endif
-let g:chromatica#global_args = ['-isystem/usr/lib/clang/9/include']
+let g:chromatica#global_args = ['-isystem/usr/local/include']
 " Required:
 set runtimepath+=~/.vim/bundle/neobundle.vim/
 " let g:chromatica#enable_at_startup=1
@@ -18,17 +18,17 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundle 'jackguo380/vim-lsp-cxx-highlight'
 " TextEdit might fail if hidden is not set.
 set hidden
-
+NeoBundle 'sheerun/vim-polyglot'
 " Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup
-
+let g:lsp_cxx_hl_use_text_props=1
 " Give more space for displaying messages.
 set cmdheight=2
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
-set updatetime=300
+set updatetime=100
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
@@ -76,7 +76,10 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
+" coc-explorer 
+nmap <space>w :CocCommand explorer<CR>
+" coc-terminal
+nmap <space>t :CocCommand terminal.Toggle<CR> 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
