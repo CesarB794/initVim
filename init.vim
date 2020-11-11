@@ -80,6 +80,8 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <space>w :CocCommand explorer<CR>
 " coc-terminal
 nmap <space>t :CocCommand terminal.Toggle<CR> 
+nmap <space>tt :CocCommand terminal.Destroy<CR>
+nmap <space>pp :CocCommand python.execInTerminal<CR>
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
