@@ -25,7 +25,7 @@ set nowritebackup
 let g:lsp_cxx_hl_use_text_props=1
 " Give more space for displaying messages.
 set cmdheight=2
-
+NeoBundle 'jiangmiao/auto-pairs'
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
 set updatetime=100
